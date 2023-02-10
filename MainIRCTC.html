@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRCTC-20BCE11039_Kumar_Kaustubh</title>
+    <link rel='stylesheet' href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href="https://stackpath.bootstarpcdn.com/bootstarp/4.5.0/css/bootstrap.min.css/" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+            position: relative;
+            background-color: aliceblue;
+        }
+        
+        #nav_fixed {
+            position: relative;
+            width: 100%;
+            border-bottom: 1px solid #f1f1f1;
+            padding: 10px 0;
+            background-color: aqua;
+            color: black;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        h4 {
+            margin-left: 18rem;
+            text-decoration: underline;
+        }
+        
+        h5 {
+            text-decoration: underline;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 15px;
+            padding: 0;
+            text-align: center;
+        }
+        
+        li {
+            display: inline;
+            margin: 15px 10px;
+            padding-bottom: 5px;
+            transition: color 0.3s;
+        }
+        
+        li.hover {
+            border-bottom: 3px solid blue;
+            color: blue;
+            cursor: pointer;
+        }
+        
+        .active {
+            color: blue;
+            border-bottom: 3px solid blue;
+        }
+        
+        .account-img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-top: 3px;
+            box-shadow: 0px 0px 10px #ccc
+        }
+        
+        #find-trains {
+            margin: 30px 0;
+            color: grey;
+        }
+        
+        .search-trains-div {
+            margin: 5px 0;
+            padding: 5px 0;
+        }
+        
+        .search-trains-div div {
+            position: relative;
+            height: 100%;
+            margin: 0 5px;
+        }
+        
+        .form-input {
+            height: 55px;
+            background-color: white;
+            border: none;
+            box-shadow: 0px 0px 5px #ccc;
+            width: 55rem;
+            color: rgba(0, 0, 255, 0.7);
+            border-radius: 5px;
+            padding-left: 20px;
+            font-weight: bold;
+            outline: none;
+            font-size: 20px;
+            margin-left: 18rem;
+        }
+        
+         ::placeholder {
+            color: rgba(0, 0, 255, 0.7);
+        }
+        
+        .search-btn {
+            width: 145px;
+            height: 55px;
+            border: none;
+            font-weight: bold;
+            color: white;
+            background-color: blue;
+            border-radius: 3px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            margin-left: 42rem;
+            margin-top: 1rem;
+        }
+        
+        .flip-icon {
+            position: relative;
+            left: 0px;
+            top: 0px;
+            margin: 0;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: blue;
+            cursor: pointer;
+            color: white;
+            margin-left: 20rem;
+        }
+        
+        #recents-searches {
+            margin-left: 18rem;
+            color: gray;
+        }
+        
+        .recents-card {
+            width: 55rem;
+            padding: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 255, 0.4);
+            border-radius: 5px;
+        }
+        
+        .recents-card p {
+            margin: 0;
+            text-align: center;
+            font-size: 20px;
+            color: black;
+            font-weight: bold;
+        }
+        
+        .recents-card {
+            color: blue;
+            margin: 0 5px;
+        }
+        
+        #holidays-section {
+            margin: 50px 0;
+        }
+        
+        .heading {
+            font-size: 35px;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .holidays-card {
+            width: 700px;
+            height: 650px;
+            border-radius: 10px;
+            border: 1px solid #f1f1f1;
+            margin: 10px;
+            box-shadow: 0px 0px 5px #ccc;
+            overflow: hidden;
+            margin-left: 25rem;
+        }
+        
+        .holidays-heading {
+            font-size: 22px;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+            color: black;
+            padding-bottom: 0;
+        }
+        
+        .holidays-para {
+            padding: 10px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        
+        .footer {
+            display: flex;
+            justify-content: center;
+            padding: 5px;
+            background-color: aqua;
+            color: #fff;
+        }
+        
+        .bottom-content {
+            font-size: 18px;
+            padding: 0px;
+            text-align: center;
+            text-decoration: underline;
+            color: black;
+            padding-bottom: 0;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <nav id="nav_fixed">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+
+                <ul>
+                    <img src="logo.png" width="50px" height="50px" />
+                    <li class="active">Home</li>
+                    <li>PNR Status</li>
+                    <li>Track the train</li>
+                    <li>Flights</li>
+                    <li>Bus</li>
+                    <li>Promotions</li>
+                    <li>Customer Care</li>
+                    <img src="myimg.png" class="account-img" />
+                </ul>
+
+
+            </div>
+        </div>
+    </nav>
+
+    <section id="find trains">
+        <div class="containers">
+            <h4>Book Train tickets</h4>
+            <div class=".d-flex search-trains-div">
+                <div style="flex-grow:4">
+                    <input class="form-input" placeholder="From Location" />
+                </div>
+                <div style="flex-grow:4">
+                    <i class="fa fa-exchange flip-icon"></i>
+                </div>
+                <div style="flex-grow:4">
+                    <input class="form-input" placeholder="To Location" />
+                </div>
+                <div style="flex-grow:2">
+                    <input class="form-input" placeholder="Select Date" />
+                </div>
+                <div style="flex-grow:2">
+                    <button class="search-btn">Search</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recents-searches">
+        <div class="container">
+            <h5 class="mb-3">Recent Searches</h5>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="recents-card">
+                        <p>Banglore <i class="fa fa-long-arrow-right"></i>Delhi</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="recents-card">
+                        <p>Mumbai <i class="fa fa-long-arrow-right"></i>Delhi</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="recents-card">
+                        <p>Chennai <i class="fa fa-long-arrow-right"></i>Delhi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="holidays-section">
+        <p class="heading">Luxury Holidays</p>
+        <div class="d-flex flex-wrap justify-content-center">
+            <div class="holidays-card">
+                <img src="ramayan.png" width="100%" height="70%" />
+                <p class="holidays-heading">Ramayan Express</p>
+                <p class="holidays-para">The Ramayana Express train will depart from Safdarjung Station in Delhi and cover all the destinations associated with Lord Rama and Ramayana. There will be adequate security arrangements on the train, along with a tour manager & guide
+                    who will provide every kind of information to the passengers onboard.</p>
+            </div>
+            <div class="holidays-card">
+                <img src="palaceonwheels.png" width="100%" height="70%" />
+                <p class="holidays-heading">Palace On Wheels</p>
+                <p class="holidays-para">The Palace on Wheels is a luxury tourist train. It was launched by the Indian Railways in association with Rajasthan Tourism Development Corporation to promote tourism in Rajasthan. It is now known as Heritage Palace on Wheels.</p>
+            </div>
+            <div class="holidays-card">
+                <img src="maharaja.png" width="100%" height="70%" />
+                <p class="holidays-heading">Maharajas' Express</p>
+                <p class="holidays-para">The Maharajas' Express is a luxury tourist train owned and operated by Indian Railway Catering and Tourism Corporation. It serves four routes across North-West and Central India, mainly centered on Rajasthan between the months of October
+                    and April.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="bottom-content">
+                        <p>Train Running Status</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="bottom-content">
+                        <p>Information</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="bottom-content">
+                        <p>Routes Available</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="bottom-content">
+                        <p>Travel Guidelines</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="bottom-content">
+                        <p>Special Services</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="bottom-content">
+                        <p>Contact us</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="bottom-content">
+                        <p>About us</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <p>Made By: Kumar Kaustubh 20BCE11039</p>
+</body>
+
+</html>
